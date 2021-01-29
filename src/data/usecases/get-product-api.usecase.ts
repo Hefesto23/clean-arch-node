@@ -1,6 +1,6 @@
-import { ProductModel } from "../../domain/models/product.model";
-import { IECommerceApiService } from "../../domain/services/ecommerce-api.interface";
-import { IGetProduct } from "../../domain/usecases/get-product.interface";
+import { ProductModel } from '../../domain/models/product.model';
+import { IECommerceApiService } from '../../domain/services/ecommerce-api.interface';
+import { IGetProduct } from '../../domain/usecases/get-product.interface';
 
 export class GetProductFromApiUseCase implements IGetProduct {
   private readonly eCommerceApiService: IECommerceApiService;
