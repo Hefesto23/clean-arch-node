@@ -1,13 +1,13 @@
 import axios from 'axios';
-import { AxiosHttpHelper } from './axios-http-helper';
+import { AxiosHttpHandler } from './axios-http-handler';
 
 jest.mock('axios');
 
 describe('AxiosHttpHelper class', () => {
-  let axiosHelper: AxiosHttpHelper;
+  let axiosHandler: AxiosHttpHandler;
 
   beforeEach(() => {
-    axiosHelper = new AxiosHttpHelper();
+    axiosHandler = new AxiosHttpHandler();
   });
 
   it('should call axios with correct params', async (done) => {
@@ -26,7 +26,7 @@ describe('AxiosHttpHelper class', () => {
       },
     };
     jest.spyOn(axios, 'get');
-    await axiosHelper.get(urlExample, headersExample);
+    await axiosHandler.get(urlExample, headersExample);
     expect(axios.get).toHaveBeenCalledWith(urlExample, expectedHeader);
     done();
   });
@@ -45,7 +45,7 @@ describe('AxiosHttpHelper class', () => {
     };
 
     jest.spyOn(axios, 'get').mockResolvedValueOnce(response);
-    const apiResponse = await axiosHelper.get(urlExample, headersExample);
+    const apiResponse = await axiosHandler.get(urlExample, headersExample);
     expect(apiResponse).toEqual(response);
     done();
   });
@@ -62,7 +62,7 @@ describe('AxiosHttpHelper class', () => {
     jest
       .spyOn(axios, 'get')
       .mockRejectedValue(new Error('Something Unexpected'));
-    const errorResponse = axiosHelper.get(urlExample, headersExample);
+    const errorResponse = axiosHandler.get(urlExample, headersExample);
     await expect(errorResponse).rejects.toThrowError('Something Unexpected');
     done();
   });
