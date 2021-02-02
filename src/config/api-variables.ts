@@ -14,7 +14,8 @@ export const BC_AUTH_CLIENT = process.env.BC_AUTH_CLIENT;
 export const BC_AUTH_TOKEN = process.env.BC_AUTH_TOKEN;
 
 export const BC_HTTP_HEADER = {
-  'content-type': 'application/json',
-  accept: 'application/json',
+  'Content-Type': 'application/json',
+  Accept: 'application/json',
   'X-Auth-Token': BC_AUTH_TOKEN,
+  'X-Auth-Client': BC_AUTH_CLIENT,
 };
