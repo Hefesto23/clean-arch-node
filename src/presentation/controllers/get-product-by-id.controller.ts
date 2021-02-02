@@ -50,7 +50,7 @@ export class GetProductByIdController implements IController {
       return res.status(200).json(responseModel);
     } catch (error) {
       this.logger.error('!Something Unexpected occurred...!');
-      this.logger.error(error.message);
+      this.logger.error(error);
       const serverError = new ErrorDto(undefined, 500, 'INTERNAL_SERVER_ERROR');
       return res.status(500).json(serverError);
     }
