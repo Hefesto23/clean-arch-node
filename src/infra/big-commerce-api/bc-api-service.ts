@@ -1,5 +1,5 @@
 import { ErrorModel } from '../../domain/models/error.model';
-import { BcErrorDto } from './dtos/bc-error.dto';
+import { ErrorDto } from '../dto/error.dto';
 import { ProductModel } from '../../domain/models/product.model';
 import { IECommerceApiService } from '../../domain/services/ecommerce-api.interface';
 import { ProductDto } from './dtos/product.dto';
@@ -29,7 +29,7 @@ export class BigCommerceApiService implements IECommerceApiService {
           error.response &&
           (error.response.status === 400 || error.response.status === 404)
         )
-          return new BcErrorDto(error.response);
+          return new ErrorDto(error.response);
         throw error;
       });
   }
