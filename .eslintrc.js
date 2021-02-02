@@ -23,6 +23,7 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "import/prefer-default-export": "off",
     "eslint-disable-next-line": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "radix": "off",
   },
 };
