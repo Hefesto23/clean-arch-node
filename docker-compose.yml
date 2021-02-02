@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  app:
+    container_name: harvey-nichols-api
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${API_PORT}:${API_PORT}
+    command: ['sh', 'scripts/start-api.sh']
