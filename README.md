@@ -1,4 +1,3 @@
-# **Harvey-Nichols - Technical Test**
 
 ![alt text](./public/img/CleanArchitecture.jpg "Clean Code Chart")
 
